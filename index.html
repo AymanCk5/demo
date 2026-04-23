@@ -2,58 +2,49 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>TikManager Pro</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TikManager Pro</title>
 <style>
-body {
-  margin:0;
-  font-family:sans-serif;
-  background:#0b0b12;
-  color:white;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  height:100vh;
-  text-align:center;
-}
-.container {
-  max-width:600px;
-}
-h1 {
-  font-size:42px;
-}
-p {
-  color:#aaa;
-  margin-top:10px;
-}
-.links {
-  margin-top:30px;
-}
-a {
-  display:inline-block;
-  margin:10px;
-  padding:10px 20px;
-  border-radius:10px;
-  text-decoration:none;
-  color:white;
-  background:#1a1a2e;
-}
-a:hover {
-  background:#2a2a40;
-}
+body{margin:0;font-family:sans-serif;background:#0b0b12;color:white;display:flex;justify-content:center;align-items:center;height:100vh}
+.container{text-align:center}
+button{padding:12px 20px;border:none;border-radius:10px;background:#ff2d7a;color:white;cursor:pointer;margin-top:20px}
+.dashboard{display:none}
+.card{background:#1a1a2e;padding:20px;border-radius:15px;margin-top:20px}
 </style>
 </head>
 <body>
 
-<div class="container">
+<div class="container" id="home">
   <h1>TikManager Pro</h1>
-  <p>Manage and organize your TikTok content in a simple and secure way.</p>
-
-  <div class="links">
-    <a href="terms.html">Terms of Service</a>
-    <a href="privacy.html">Privacy Policy</a>
-  </div>
+  <p>Manage your TikTok content in one place.</p>
+  <button onclick="login()">Login with TikTok</button>
 </div>
+
+<div class="container dashboard" id="dashboard">
+  <h1>Dashboard</h1>
+  <div class="card">
+    <h2>Welcome, Ayman</h2>
+    <p>Username: @ayman</p>
+    <p>Followers: 1,234</p>
+  </div>
+  <button onclick="showTerms()">Terms</button>
+  <button onclick="showPrivacy()">Privacy</button>
+</div>
+
+<script>
+function login(){
+  document.getElementById('home').style.display='none';
+  document.getElementById('dashboard').style.display='block';
+}
+
+function showTerms(){
+  window.location.href='terms.html';
+}
+
+function showPrivacy(){
+  window.location.href='privacy.html';
+}
+</script>
 
 </body>
 </html>
